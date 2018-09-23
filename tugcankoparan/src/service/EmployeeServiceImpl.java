@@ -14,8 +14,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeDAO = new EmployeeDAOImpl();
 	}
 
-	// data kontrolleri , bu kisim validation tarafinda/sinifinda yapilabilir.
-	// loglama vs 
 	private void checkSalary(Employee employee) {
 
 		if (employee.getSalary() < 100) {
@@ -23,25 +21,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 	}
 
-	private void checkX(Employee employee) {
-		// validation
-	}
-
-	private void checkY(Employee employee) {
-		// validation
-	}
 
 	private void checkEmployeeData(Employee employee) {
 		checkSalary(employee);
-		checkX(employee);
-		checkY(employee);
 	}
 
 	@Override
 	public Employee save(Employee employee) {
 		checkEmployeeData(employee);
-		//
-		// extra kontroller olabilir.
 		return employeeDAO.save(employee);
 	}
 
