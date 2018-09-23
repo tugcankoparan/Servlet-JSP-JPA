@@ -22,8 +22,6 @@ public class EmployeeServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		// servletlerde formdan/request parametresini almak icin getParameter metodunu
-		// kullaniyoruz.
 		String name = req.getParameter("name");
 		String surname = req.getParameter("surname");
 		int salary = Integer.parseInt(req.getParameter("salary"));
